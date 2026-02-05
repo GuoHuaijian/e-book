@@ -1,0 +1,18 @@
+{
+  "name": "geektime-tech-library",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "books:sync": "node scripts/sync-books.mjs",
+    "docs:dev": "node scripts/sync-books.mjs && vitepress dev docs",
+    "docs:build": "node scripts/sync-books.mjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "latest"
+  },
+  "dependencies": {
+    "pdfjs-dist": "2.16.105",
+    "vue": "latest"
+  }
+}

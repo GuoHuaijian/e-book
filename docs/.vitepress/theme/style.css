@@ -1,0 +1,207 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;600;700&family=ZCOOL+XiaoWei&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --vp-font-family-base: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --vp-c-brand-1: #0f766e;
+  --vp-c-brand-2: #0b5f57;
+  --vp-c-brand-3: #14b8a6;
+
+  --vp-c-bg: #f6f7f9;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-alt: #eef2f4;
+
+  --vp-c-text-1: #0f172a;
+  --vp-c-text-2: #334155;
+}
+
+.dark {
+  --vp-c-bg: #0b1120;
+  --vp-c-bg-elv: #0f172a;
+  --vp-c-bg-alt: #111827;
+
+  --vp-c-text-1: #e2e8f0;
+  --vp-c-text-2: #94a3b8;
+}
+
+.VPNavBarTitle .title,
+.VPHomeHero .name,
+.VPHomeHero .text,
+h1,
+h2,
+h3 {
+  font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
+  letter-spacing: 0.2px;
+}
+
+/* Home background */
+.VPHome {
+  position: relative;
+  background:
+    radial-gradient(900px 500px at 20% -20%, rgba(20, 184, 166, 0.18), transparent 60%),
+    radial-gradient(700px 400px at 90% 10%, rgba(59, 130, 246, 0.15), transparent 60%),
+    linear-gradient(180deg, #f8fafc, #f1f5f9);
+}
+
+.VPHome::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(15, 118, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(15, 118, 110, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 70%);
+  pointer-events: none;
+}
+
+.VPHome .VPHomeHero,
+.VPHome .VPHomeFeatures {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.VPHome .VPHomeHero {
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.VPHome .VPHomeFeatures {
+  animation: fadeUp 0.8s 0.1s ease-out both;
+}
+
+/* Home card layout */
+.home-section {
+  margin-top: 32px;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  border-color: #14b8a6;
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.12);
+}
+
+.book-card.pdf {
+  border-style: dashed;
+}
+
+.book-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--vp-c-text-1);
+}
+
+.book-card p {
+  margin: 0;
+  color: #475569;
+  font-size: 13px;
+}
+
+.dark .VPHome {
+  background:
+    radial-gradient(800px 420px at 10% -10%, rgba(20, 184, 166, 0.15), transparent 60%),
+    radial-gradient(700px 380px at 90% 0%, rgba(56, 189, 248, 0.15), transparent 60%),
+    linear-gradient(180deg, #0b1120, #0f172a);
+}
+
+.dark .VPHome::before {
+  background:
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+}
+
+.dark .VPFeature {
+  background: #0f172a;
+  border-color: #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark .book-card {
+  background: #0f172a;
+  border-color: #1f2937;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dark .book-card h3 {
+  color: #e2e8f0;
+}
+
+.dark .book-card p {
+  color: #94a3b8;
+}
+
+.VPDoc .content-container {
+  max-width: 900px;
+}
+
+@media (max-width: 640px) {
+  .book-card {
+    padding: 14px;
+  }
+}
+
+/* PDF viewer (scoped styles handled inside component) */
+
+/* PDF 阅读页布局扩展 */
+.pdf-reader .VPDoc {
+  padding-top: 16px;
+}
+
+.pdf-reader .VPDoc .container {
+  max-width: 100%;
+}
+
+.pdf-reader .VPDoc .content {
+  padding: 0 16px 64px;
+}
+
+@media (min-width: 960px) {
+  .pdf-reader .VPDoc .content {
+    padding: 0 32px 64px;
+  }
+}
+
+.pdf-reader .VPDoc .content-container {
+  max-width: 1200px;
+}
+
+.pdf-reader .VPDoc .aside,
+.pdf-reader .VPDocAside,
+.pdf-reader .VPDocAsideOutline,
+.pdf-reader .VPDocAsideOutline.has-outline {
+  display: none !important;
+}
+
+.pdf-reader .VPDocFooter {
+  display: none;
+}

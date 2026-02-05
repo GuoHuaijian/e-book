@@ -1,0 +1,20 @@
+﻿{
+  "books": {
+    "go-36": "Go语言核心36讲",
+    "java-practice": "Java开发编程实战",
+    "mysql-45": "MySQL实战45讲",
+    "redis-core": "Redis核心技术与实战",
+    "redis-design": "Redis设计与实现",
+    "redis-source": "Redis源码剖析与实战",
+    "arch-from-zero": "从0开始学架构",
+    "network-talk": "趣谈网络协议",
+    "design-pattern": "设计模式之美",
+    "algo-beauty": "数据结构与算法之美",
+    "http-insight": "透视HTTP协议",
+    "left-ear": "左耳听风"
+  },
+  "pdf": {
+    "高性能MySQL第三版.pdf": "高性能 MySQL 第三版",
+    "Redis设计与实现.pdf": "Redis设计与实现"
+  }
+}
